@@ -2,10 +2,16 @@ package br.com.juliocesarmj;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class DesafioJavaJrApplication {
+public class DesafioJavaJrApplication extends SpringBootServletInitializer {
 
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(DesafioJavaJrApplication.class);
+	}
 	public static void main(String[] args) {
 		SpringApplication.run(DesafioJavaJrApplication.class, args);
 	}
